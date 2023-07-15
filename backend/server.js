@@ -24,8 +24,7 @@ app.use("/api/message", messageRoutes);
 // --------------------------deployment------------------------------
 // --------------------------deployment------------------------------
 
-const __dirname1 = path.resolve();
-
+const __dirname1 = "https:frontend-chat-app-u89r.onrender.com";
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname1, "/frontend/build")));
 
@@ -55,7 +54,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://frontend-chat-app-u89r.onrender.com",
     // credentials: true,
   },
 });
